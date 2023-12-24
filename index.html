@@ -1,201 +1,1190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+      }
 
-        .contact-card {
-            width: 340px;
-            height: 85px;
-            border: none;
-            display: flex;
-            justify-content: space-between; /* Align items with space between them */
-            align-items: center; /* Center vertically */
-            border-radius: 10px;
-            background-color: #f0f0f0;
-            margin-bottom: 5px; /* Add margin between cards */
-        }
+      .contact-card1 {
+        width: 350px;
+        height: 100px;
+        border: none;
+        display: flex;
+        justify-content: space-between; /* Align items with space between them */
+        align-items: center; /* Center vertically */
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        margin-bottom: 5px; /* Add margin between cards */
+      }
+      .contact-card2 {
+        width: 350px;
+        height: 120px;
+        border: none;
+        display: flex;
+        justify-content: space-between; /* Align items with space between them */
+        align-items: center; /* Center vertically */
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        margin-bottom: 5px; /* Add margin between cards */
+      }
+      .contact-card {
+        width: 340px;
+        height: 85px;
+        border: none;
+        display: flex;
+        justify-content: space-between; /* Align items with space between them */
+        align-items: center; /* Center vertically */
+        border-radius: 10px;
+        background-color: #f0f0f0;
+        margin-bottom: 5px; /* Add margin between cards */
+      }
 
-        .contact-details {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-        }
+      .contact-details {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+      }
 
-        .contact-image-container {
-            width: 50px;
-            height: 60px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            margin-right: 10px;
-        }
+      .contact-image-container {
+        width: 50px;
+        height: 60px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+      .contact-image1 {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+      }
+      .contact-image2 {
+        width: 46px;
+        height: 46px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .contact-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
 
-        .contact-image {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+      .name {
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
 
-        .name {
-            font-size: 13px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+      .job-title {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+      }
 
-        .job-title {
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 5px;
-        }
+      .contact-buttons {
+        display: flex;
+        flex-direction: column; /* Align buttons vertically */
+        align-items: flex-end; /* Align buttons to the right */
+        padding: 10px;
+      }
 
-        
-        .contact-buttons {
-            display: flex;
-            flex-direction: column; /* Align buttons vertically */
-            align-items: flex-end; /* Align buttons to the right */
-            padding: 10px;
-        }
+      .call-button {
+        margin-top: 5px; /* Add spacing between buttons */
+        padding: 5px 10px;
+        background-color: rgb(60, 60, 148);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 90px;
+        height: 25px;
+        font-size: x-small;
+      }
+      .call-button2 {
+        margin-top: 5px; /* Add spacing between buttons */
+        padding: 5px 10px;
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 90px;
+        height: 25px;
+        font-size: x-small;
+      }
 
-        .call-button {
-            margin-top: 5px; /* Add spacing between buttons */
-            padding: 5px 10px;
-            background-color: rgb(60, 60, 148);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 90px;
-            height: 25px;
-            font-size: x-small;
-        }
-
-        p {
-            color: gray;
-            font-size: x-small;
-        }
-        .disgnation{
-            font-size: x-small;
-            color: gray;
-        }
-        .st2{
-            color: gray;
-        }
-       
+      p {
+        color: gray;
+        font-size: x-small;
+      }
+      .disgnation {
+        font-size: x-small;
+        color: gray;
+      }
+      .disgnation2 {
+        font-size: xx-small;
+        color: gray;
+      }
+      .st2 {
+        color: gray;
+      }
     </style>
-</head>
-<body>
-
-    
+  </head>
+  <body>
     <div class="contact-container">
-        <h3 style="text-align:center;"><b>CIRCUIT BANGALOW</b><br><span class="st2">RUHUNUKETHA</span></h3>
-        <div class="contact-card">
-            <div class="contact-details">
-                <div class="contact-image-container">
-                    <img class="contact-image" src="one.jpg" alt="Profile Image">
-                </div>
-                <div>
-                    <div class="name">Mr.Ranjith<br>
-                        <span class="disgnation">Circuit Keeper (Ruhunuketha)</span><br>
-                        <p>
-                         Mobile 1 : <span id="cbr_mobile1">078-4502728</span><br>
-                         Mobile 2 : <span id="cbr_mobile2">0776459085</span>                    
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-buttons">
-                <button class="call-button" onclick="callNumber('cbr_mobile1')">Call Mobile 1</button>
-                <button class="call-button" onclick="callNumber('cbr_mobile2')">Call Mobile 2</button>
-            </div>
-            <script>
-                function callNumber(number, isMobile = false) {
-                    var prefix = isMobile ? 'tel:' : 'tel:';
-                    window.location.href = prefix + document.getElementById(number).textContent;
-                }
-            </script>
-        </div>
-
-
-
-        <!-- Add another card below -->
-       
-        <h3 style="text-align:center;"><b>CIRCUIT BANGALOW</b><br><span class="st2">PIBURATHTHAWA</span></h3>
-        <div class="contact-card">
-            <div class="contact-details">
-                <div class="contact-image-container">
-                    <img class="contact-image" src="one.jpg" alt="Profile Image">
-                </div>
-                <div>
-                    <div class="name">Mr. Sumanadasa<br>
-                        <span class="disgnation">Circuit Keeper (Pimburaththawa)</span><br>
-                        <p>
-                         Mobile : <span id="cbp_mobile">071-5421334</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-buttons">
-                <button class="call-button" onclick="callNumber('cbp_mobile')">Call Mobile</button>
-              
-            </div>
-            <script>
-                function callNumber(number, isMobile = false) {
-                    var prefix = isMobile ? 'tel:' : 'tel:';
-                    window.location.href = prefix + document.getElementById(number).textContent;
-                }
-            </script>
-        </div>
+      <h3 style="text-align: center">
+        <b>SYSTEM H
+        </b><br /><span class="st2"
+          >UNIT OFFICE - MANAGER
+        </span>
+      </h3>
     
+
+      <!-- Add another card below -->
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Miss.N.P.G Shammika Amani <br />
+              <span class="disgnation">Unite Manager <br>(Media Officer)</span><br />
+              <p>
+                Mobile : <span id="Bm1_mobile">076-4323777
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <button class="call-button" onclick="callNumber('Bm1_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+    
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. H.M.Wijerathna <br />
+              <span class="disgnation">Unite Manager <br>(Unit 403)</span><br />
+              <p>
+                Mobile : <span id="Bm2_mobile">071-3944414</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <button class="call-button" onclick="callNumber('Bm2_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+
+      <div class="contact-card1">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr.H.M.S.K.Herath  <br />
+              <span class="disgnation">Unite Manager <br>(Unit 402)</span><br />
+              <p>
+            
+                Mobile : <span id="Bm3_mobile">071-4287613
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
         
-        <div class="contact-card">
-            <div class="contact-details">
-                <div class="contact-image-container">
-                    <img class="contact-image" src="one.jpg" alt="Profile Image">
-                </div>
-                <div>
-                    <div class="name">Mr. Priyantha<br>
-                        <span class="disgnation">Circuit Keeper (Pimburaththawa)</span><br>
-                        <p>
-                         Mobile : <span id="cbp2_mobile">'071-2760586</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-buttons">
-                <button class="call-button" onclick="callNumber('cbp2_mobile')">Call Mobile</button>
-              
-            </div>
-            <script>
-                function callNumber(number, isMobile = false) {
-                    var prefix = isMobile ? 'tel:' : 'tel:';
-                    window.location.href = prefix + document.getElementById(number).textContent;
-                }
-            </script>
+          <button class="call-button" onclick="callNumber('Bm3_mobile')">
+            Call Mobile
+          </button>
         </div>
-    
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+
+      
+      <div class="contact-card1">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Miss. H.M.N.M.Herath  <br />
+              <span class="disgnation">Unite Manager <br>(Unit 407)</span><br />
+              <p>
+                Mobile : <span id="Bm4_mobile">071-6421667
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <button class="call-button" onclick="callNumber('Bm4_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. P.H.R.S.T. Nawarathne  <br />
+              <span class="disgnation">Unite Manager <br>(Avukana)</span><br />
+              <p>
+               
+                Mobile : <span id="Bm5_mobile">071-3156191
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+      
+          <button class="call-button" onclick="callNumber('Bm5_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr .M.M.S.P Kumara <br />
+              <span class="disgnation">Unite Manager <br>(Bulnewa)</span><br />
+              <p>
+               
+                Mobile : <span id="Bm6_mobile">071-6207971
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+       
+          <button class="call-button" onclick="callNumber('Bm6_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mrs. N.K.G.N.D Nayakakorala <br />
+              <span class="disgnation">Unite Manager <br>(Kalankuttiya)</span><br />
+              <p>
+        
+                Mobile : <span id="Bm7_mobile">071-2292418
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          
+          <button class="call-button" onclick="callNumber('Bm7_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr .R.M.E. Wanigasooriya  <br />
+              <span class="disgnation">Unite Manager <br>(Hurigasweva)</span><br />
+              <p>
+        
+                Mobile : <span id="Bm8_mobile">071-5198817
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm8_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Miss. A.M.A.N.K Ariyasinghe <br />
+              <span class="disgnation">Unite Manager <br>(Institutional Development 
+                Officer )</span><br />
+              <p>
+               
+                Mobile : <span id="Bm9_mobile">071-9382461
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm9_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. P.D.M. Jayasundara<br />
+              <span class="disgnation">Unite Manager <br>(Meegalawa)</span><br />
+              <p>
+              
+                Mobile : <span id="Bm10_mobile">071-3384149
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+        
+          <button class="call-button" onclick="callNumber('Bm10_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. K.P.R.M Ramanayake  <br />
+              <span class="disgnation">Unite Manager <br>(Bongama)</span><br />
+              <p>
+              
+                Mobile : <span id="Bm11_mobile">071-4456752
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm11_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mrs. N.G.K.G. Hemamali  <br />
+              <span class="disgnation">Unite Manager <br>(Unit-413/414)</span><br />
+              <p>
+             
+                Mobile : <span id="Bm12_mobile">071-3728312
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm12_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. M.T.I. Mallikarchchi <br />
+              <span class="disgnation">Unite Manager <br>(Unit-417 Town)</span><br />
+              <p>
+               
+                Mobile : <span id="Bm13_mobile">071-6863980
+
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm13_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. W.B.M.W.R.K. Jayathilaka   <br />
+              <span class="disgnation">Unite Manager <br>(Unit-417/418) 
+              </span><br />
+              <p>
+              
+                Mobile : <span id="Bm14_mobile">071-9051723
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm14_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. N.A.S.S. Kumara <br />
+              <span class="disgnation">Unite Manager <br>(Unit-412/415) 
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm15_mobile">071-8344578
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+       
+          <button class="call-button" onclick="callNumber('Bm15_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mrs. N.G.K.G. Hemamali   <br />
+              <span class="disgnation">Unite Manager <br>(Unit-413/414) 
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm16_mobile">071-3728312
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm16_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. M.T.I. Mallikarchchi <br />
+              <span class="disgnation">Unite Manager <br>(Unit-417 Town) 
+              </span><br />
+              <p>
+              
+                Mobile : <span id="Bm17_mobile">071-6863980
+
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm17_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. W.B.M.W.R.K. Jayathilaka <br />
+              <span class="disgnation">Unite Manager <br>(Unit-413/414) 
+
+              </span><br />
+              <p>
+              
+                Mobile : <span id="Bm18_mobile">071-9051723
+
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+       
+          <button class="call-button" onclick="callNumber('Bm18_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. N.A.S.S. Kumara  <br />
+              <span class="disgnation">Unite Manager <br>(Unit-412/415) 
+
+              </span><br />
+              <p>
+             
+                Mobile : <span id="Bm19_mobile">071-8344578
+
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm19_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. A. Nishantha Bandara   <br />
+              <span class="disgnation">Unite Manager <br>(Unit-404) 
+
+              </span><br />
+              <p>
+                Mobile : <span id="Bm20_mobile">071-2047769
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <button class="call-button" onclick="callNumber('Bm20_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. H.M.C Jayashan  <br />
+              <span class="disgnation">Unite Manager <br>(Unit-405A) 
+
+              </span><br />
+              <p>
+                Mobile : <span id="Bm21_mobile">071-7255440
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <button class="call-button" onclick="callNumber('Bm21_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. H.B.Wijerathna <br />
+              <span class="disgnation">Unite Manager <br>(Unit-405B) 
+
+              </span><br />
+              <p>
+                Mobile : <span id="Bm22_mobile">071-8896389
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          <button class="call-button" onclick="callNumber('Bm22_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr .H.A.B Sarath Kumara <br />
+              <span class="disgnation">Unite Manager <br>(Unit-406/408) 
+
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm23_mobile">071-4456745
+
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+        
+          <button class="call-button" onclick="callNumber('Bm23_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. J.Lakshman Jothipala <br />
+              <span class="disgnation">Unite Manager <br>(Unit-Town) 
+
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm24_mobile">071-4456602
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+        
+          <button class="call-button" onclick="callNumber('Bm24_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. N.U.N Chamara <br />
+              <span class="disgnation">Unite Manager <br>(Unit-405A) 
+
+              </span><br />
+              <p>
+            
+                Mobile : <span id="Bm25_mobile">070-6151138
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm25_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. H.A.Upul Chaminda <br> Weerasekara   <br />
+              <span class="disgnation">Unite Manager <br>(Unit-406/408) 
+
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm26_mobile">070-2554899
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm26_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mrs.M Sriyalatha  <br />
+              <span class="disgnation">Unite Manager <br>(Unit-420/421) 
+
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm27_mobile">071 8662319
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          
+          <button class="call-button" onclick="callNumber('Bm27_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. R A Gamini Ranasingha  <br />
+              <span class="disgnation">Unite Manager <br>(Unit-411/419) 
+              </span><br />
+              <p>
+               
+                Mobile : <span id="Bm28_mobile">071 6265059
 
 
 
 
 
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+         
+          <button class="call-button" onclick="callNumber('Bm28_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+      <div class="contact-card2">
+        <div class="contact-details">
+          <div class="contact-image-container">
+            <img class="contact-image2" src="one.jpg" alt="Profile Image" />
+          </div>
+          <div>
+            <div class="name">
+                Mr. M S I Mohomed Yakub  <br />
+              <span class="disgnation">Unite Manager <br>(Unit-409/410) 
+
+              </span><br />
+              <p>
+             
+                Mobile : <span id="Bm29_mobile">071 6254748
+
+
+
+
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-buttons">
+          
+          <button class="call-button" onclick="callNumber('Bm29_mobile')">
+            Call Mobile
+          </button>
+        </div>
+        <script>
+          function callNumber(number, isMobile = false) {
+            var prefix = isMobile ? "tel:" : "tel:";
+            window.location.href =
+              prefix + document.getElementById(number).textContent;
+          }
+        </script>
+      </div>
+
+     
+
+
+      <br /><br />
     </div>
-
-</body>
+  </body>
 </html>
